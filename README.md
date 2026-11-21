@@ -47,7 +47,7 @@ follow_up_content_blocks.append({
 
 **Result and learning.** The chatbot successfully answered a question about Bedrock's capabilities. I learned how tool use makes retrieval conditional and how external reference text differs from conversation memory. Retrieved material can support an answer, but does not automatically guarantee its accuracy.
 
-![I-1 chatbot output about Bedrock capabilities](images/rag-chatbot.png)
+![I-1 chatbot output about Bedrock capabilities](RAGChatbot.png)
 
 ### I-2: Document Summarization
 
@@ -75,10 +75,10 @@ The same user message includes `{"text": input_text}`. The request uses a 2,000-
 
 **Result and learning.** I customized the prompt to request the three most important elements for an intern or new hire. The application returned a summary of Amazon's Leadership Principles with a section addressing that audience; the visible first priority is Customer Obsession. This showed how audience-specific instructions can shape a document summary without changing the source document.
 
-![I-2 custom summarization instructions and partial output](images/document-summarization.png)
+![I-2 custom summarization instructions and partial output](Document%20Summarization.png)
 
 
-[Response Streaming output](images/response-streaming.png) · [Embeddings Search output](images/embeddings-search.png)
+[Response Streaming output](ResponseStreaming.png) · [Embeddings Search output](Embedding%20Research.png)
 
 ## 3. Security & Safeguards
 
@@ -97,7 +97,7 @@ flowchart LR
 
 **Result and learning.** The console showed Ready status. The saved test for “I hate city people.” shows `Intervened` and the configured blocked-input message. 
 
-![S-1 working-draft test showing intervention](images/guardrail-test.png)
+![S-1 working-draft test showing intervention](guardrailtest.png)
 
 This console lab did not require Python code. Its configured rejection message was:
 
@@ -136,9 +136,9 @@ client.create_guardrail_version(guardrailIdentifier=guardrail_id)
 
 **Result and learning.** The script successfully created the resource and numbered version. The screenshot shows the code-created guardrail in Ready status. 
 
-![S-2 code-created guardrail in Ready status](images/guardrail-from-code.png)
+![S-2 code-created guardrail in Ready status](guardrail%20programmatically.png)
 
-[Guarded invocation trace](images/guardrail-trace.png)
+[Guarded invocation trace](Invoking%20models%20with%20guardrails.png)
 
 ## 4. Bonus Labs
 
@@ -161,7 +161,7 @@ def get_prompt(user_input, template):
 
 **Result and learning.** I selected Reply Template and Complementary Customer Email, updated the retired model, and successfully generated a reply. I learned to separate reusable task instructions from variable content, allowing one application to support replies, summaries, sentiment analysis, and recommendations. 
 
-[O-1 selected template and email input](images/bonus1-showcase.png)
+[O-1 selected template and email input](bonus1.png)
 
 ### O-2: Text Generation Playground
 
@@ -187,7 +187,7 @@ response = bedrock.converse(
 
 **Result and learning.** With “hi everyone,” temperature 0.2, Top P 0.9, and an output-token limit of 822, the application returned a greeting. The token setting is an upper limit, not the actual output length. 
 
-![O-2 parameter controls and generated greeting](images/bonus2-playground.png)
+![O-2 parameter controls and generated greeting](bonus2.png)
 
 ## 5. Practical takeaways
 
